@@ -11,6 +11,61 @@
     <h1>2022</h1>
 
     <hgroup>
+        <h2 id="reading-rfc7807">Reading the RFC7807</h2>
+        <h3>2022-10-28</h3>
+    </hgroup>
+    <p>
+        I read RFC not only as a source of information but also as a source of ideas and inspiration.
+        Reading RFC also clears your engineer's mind and makes you think in the correct terms.
+    </p>
+
+    <p>
+        Error reporting for API clients is as important as everything else in an API.
+        Throughout many projects we released, we found a way to carry machine-readable details of an error:
+        <pre>
+{
+  "errors": [
+    {
+      "code": "1",
+      "description": "1000000 is too big",
+      "field_path": "dimensions.weight_g",
+      "constraint_name": "max",
+      "constraint_value": "31751"
+    }
+  ]
+}</pre>
+        That error object has machine <code>code</code>, a human-readable <code>description</code> of an error,
+        <code>field_path</code> reporting a problematic field and constraints caused the error.
+    </p>
+
+    <p>
+        RFC7807 (Problem Details for HTTP APIs) offers a more plain object:
+        <pre>
+{
+  "type": "https://example.com/probs/out-of-credit",
+  "title": "You do not have enough credit.",
+  "detail": "Your current balance is 30, but that costs 50.",
+  "instance": "/account/12345/msgs/abc",
+  "balance": 30,
+  "accounts": [
+    "/account/12345",
+    "/account/67890"
+  ]
+}</pre>
+        The standard also encourages extending the object with extra fields, giving more context to a client.
+    </p>
+
+    <p>
+        The best API guide encompassing RFC7807 is developed and supported by several Belgian government institutions:
+        <a target="_blank" href="https://www.belgif.be/specification/rest/api-guide/">REST Guidelines</a>.
+        Worth reading.
+    </p>
+
+    <p>
+        We'll try the RFC7807 error object in our upcoming projects to compare it with what we already have.
+    </p>
+
+    <hgroup>
         <h2 id="finished-reading-effective-go">I finished reading "Effective Go"</h2>
         <h3>2022-10-22</h3>
     </hgroup>
