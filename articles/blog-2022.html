@@ -12,6 +12,36 @@
     <a href="../">Home</a>
 
     <hgroup>
+        <h2 id="belgif-rest-guidelines">Belgif REST Guidelines</h2>
+        <h3>2022-11-08</h3>
+    </hgroup>
+    <p>
+        I've finished reading <a href="https://www.belgif.be/specification/rest/api-guide/">REST Guidelines</a> by Belgif and could recommend it for review.
+    </p>
+    <p>
+        I agree with most of the recommendations except the following.
+    </p>
+    <p>
+        The guide recommends <i>camelCase</i> JSON field naming. Adidas, FedEx, DHL, and many more use the same style.
+        We prefer (as there is no naming standard for JSON fields) <i>snake_case</i>, which is also popular and used by Facebook, Twitter, and many more companies.
+        That's just our preference and Go programming language doesn't force us to use one style or another.
+    </p>
+    <p>
+        Links to self.
+        We have yet to encounter a real need to have that link.
+        Linking with other resources (using the <mark>href</mark> attribute) might be helpful for the client.
+        Still, a client usually saves its current state and knows where it is at the moment.
+        <mark>self</mark> link looks redundant but might be used for consistency.
+    </p>
+    <p>
+        I also got a couple of new ideas from this guide. Embedding resources look interesting.
+        I don't like GraphQL, and embedding is a workaround: you may request extended data objects specifying the `embed` query parameter.
+    </p>
+    <p>
+        Anyway, good guide stuffed with links to other valuable resources.
+    </p>
+
+    <hgroup>
         <h2 id="reading-rfc7807">Reading the RFC7807</h2>
         <h3>2022-10-28</h3>
     </hgroup>
