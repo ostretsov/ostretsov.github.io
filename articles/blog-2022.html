@@ -12,6 +12,69 @@
     <a href="../">Home</a>
 
     <hgroup>
+        <h2 id="go-google-style-guide">Go styleguide by Google</h2>
+        <h3>2022-12-31</h3>
+    </hgroup>
+    <p>
+        Google team recently published the <a href="https://google.github.io/styleguide/go/">Go programming language style guide</a>.
+        As stated, this is only early days, and work is still in progress.
+        Is the style guide good enough to adopt in your team?
+    </p>
+
+    <p>
+        <u>The first part</u> is about the principles behind the decisions of the style guide.
+        It states the basis for the recommendations in the following two documents.
+    </p>
+
+    <p>
+        <u>The second part</u> ("Style Decisions") is primarily for readability mentors.
+        It's about naming variables and packages, providing examples in the documentation, formatting code conventions in Google, go routines, generics, tests, etc.
+    </p>
+
+    <p>
+        After reading this part, I decided to write <a href="https://go.dev/blog/examples">examples</a> of the usage of our code.
+        I also like the import grouping rule and tried <a href="https://pkg.go.dev/golang.org/x/tools/cmd/goimports">goimports</a> to format imports consistently.
+        It separates imports according to the recommendation into standard library packages and other (project and vendored) packages.
+    </p>
+
+    <p>
+        The accent here is on readability and avoiding overthinking about performance.
+        In almost all cases, readable code is preferred, and only profiling and benchmarking should be the reason to make code less readable.
+    </p>
+
+    <p>
+        The style guide also recommends avoiding using assert libraries in tests, preferring more straightforward solutions for comparing values like <a href="https://github.com/google/go-cmp">go-cmd</a>.
+        This approach is more flexible and, finally, even concise.
+    </p>
+
+    <p>
+        <u>The third and last part</u> of the guide is <a href="https://google.github.io/styleguide/go/best-practices">Best practices</a>.
+        It's easy to read and take on board.
+        Here you'll find a lot of examples of "Good" and "Bad" code fragments.
+        There are also insightful notes about "panic" and error handling.
+    </p>
+
+    <p>
+        Is it worthwhile to adopt a style guide in your company?
+        The short answer is "Yes."
+        Should it be this style guide?
+        My answer is "Yes" for our team.
+        This guide is coherent, consistent, and complete.
+    </p>
+
+    <p>
+        Moreover, <a href="https://www.informationisbeautiful.net/visualizations/million-lines-of-code/">Google is the biggest</a> software company considering lines of code (LOC).
+        In 2015 Google had more than 2 billion LOC.
+        I'm sure they use the Go programming language 100% and ponder on all recommendations they give.
+    </p>
+
+    <p>
+        In the next project, before committing, I will validate my code against the style guide.
+        At first, it would take time.
+        After a while, I will compare such code with what I had before applying these recommendations and share my experience.
+    </p>
+
+    <hgroup>
         <h2 id="belgif-rest-guidelines">Belgif REST Guidelines</h2>
         <h3>2022-11-08</h3>
     </hgroup>
