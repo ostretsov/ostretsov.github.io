@@ -8,6 +8,52 @@
 </head>
 <body>
 <main class="container">
+    <h1>2023</h1>
+    <a href="../">Home</a>
+
+    <hgroup>
+        <h2 id="custom-browser-print">Custom Browser Print in Golang</h2>
+        <h3>2023-02-05 <span class="keywords">(keywords: windows, pdf, sumatrapdf, pdftoprinter, golang)</span></h3>
+    </hgroup>
+
+    <p>
+        At the end of December 2022, the Google Chrome team updated the browser,
+        and it started rendering HTML labels for printing differently, forcing us to adjust scaling settings.
+        This specific setting depends on the environment; for example, on my Ubuntu Linux,
+        I can't change scaling in the same way as on our workstations at the warehouse.
+    </p>
+
+    <p>
+        Even worse, printing HTML-rendered labels work differently on different browsers.
+        The conclusion is clear: relying on a browser rendering engine for printing is a weak dependence on a project.
+    </p>
+
+    <p>
+        We decided to write our solution for printing PDFs in browser independent way using <a target="_blank" href="https://www.sumatrapdfreader.org/free-pdf-reader">Sumatra PDF</a>.
+        It's free, fast, and allows you to print PDFs from the command line.
+        There is also a popular program to print PDFs in Windows <a target="_blank" href="http://www.columbia.edu/~em36/pdftoprinter.html">PDFtoPrinter</a>,
+        but it's slower than Sumatra PDF, written on AutoIT and steals focus for a moment each time it's executed.
+    </p>
+
+    <p>
+    Finding the way to print PDFs on Windows was the most challenging task.
+        The rest is history. Here is the scheme of our "browser-print" program:
+        <img src="2023-assets/custom-browser-print.png"/>
+    </p>
+
+    <p>
+        Each time a user clicks on the "Print" button, JS checks whether the "browser-print" is listening on "localhost:9099,"
+        and if yes, it passes the label to it to print.
+        Otherwise, a browser rendering engine for printing is used.
+    </p>
+
+    <p>
+        The preferable way, of course, is to print ZPL, not PDF, but in our specific case,
+        custom fonts must be uploaded to every printer making the whole solution relatively rigid.
+        One day we'll simplify our labels and use the default Zebra printers font.
+    </p>
+
+
     <h1>2022</h1>
     <a href="../">Home</a>
 

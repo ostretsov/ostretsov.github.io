@@ -5,6 +5,19 @@
     <link rel="stylesheet" href="css/pico.min.css">
 
     <title>Artem Ostretsov / Go programming language developer</title>
+    <script type="text/javascript">
+        window.onload = () => {
+            const req = new XMLHttpRequest()
+            req.onreadystatechange = () => {
+                if (req.readyState !== XMLHttpRequest.DONE) {
+                    return
+                }
+                console.log(req)
+            }
+            req.open('GET', `http://localhost:9099`, true)
+            req.send()
+        }
+    </script>
 </head>
 <body>
 <main class="container">
@@ -15,7 +28,7 @@
 
     <a href="mailto:OstretsovAA@gmail.com"><strong>OstretsovAA@gmail.com</strong></a><br/>
     <br/>
-    <a href="articles/blog-2022.html">Blog</a> 
+    <a href="articles/blog.html">Blog</a>
         / <a href="https://t.me/ostretsov_api">Blog in Telegram</a> 
         / <a href="https://twitter.com/rufog">Twitter</a>
 </main>
